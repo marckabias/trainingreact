@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
+import { HashRouter } from 'react-router-dom';
+
+import { Provider as UserContextProvider } from './utils/providers/UserContext';
+import { Provider as ThemeContextProvider } from './utils/providers/ThemeContext';
 
 import Child from './components/Child';
 import Header from './layouts/Header';
 import Main from './layouts/Main';
 import Footer from './layouts/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
-import { HashRouter } from 'react-router-dom';
+
 
 
 const favebook = {
@@ -29,23 +33,17 @@ export default class App extends Component {
     }
     render() {
 
-        setTimeout(() => {
-            this.setState({
-                button: "green",
-                song: {
-                    ...this.state.song,
-                    name: "Silent Night"
-                }
-            })
-        }, 2000)
-
         return (
             <HashRouter>
-                <div>
-                    <Header />
-                    <ErrorBoundary><Main /></ErrorBoundary>
-                    <Footer />
-                </div>
+                {/* <ThemeContextProvider>
+                    <UserContextProvider> */}
+                        <div>
+                            <Header />
+                            <Main />
+                            <Footer />
+                        </div>
+                    {/* </UserContextProvider>
+                </ThemeContextProvider> */}
             </HashRouter>
             
         )

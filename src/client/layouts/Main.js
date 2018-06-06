@@ -11,14 +11,7 @@ import AuthorDetails from '../components/AuthorDetails';
 import NoMatch from '../components/NoMatch';
 
 class Main extends Component {
-
-    constructor() {
-        super()
-
-    }
-
     render() {
-
         return (
             <div id="main" className="section has-background-white">
                 <Switch>
